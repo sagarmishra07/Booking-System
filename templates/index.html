@@ -1,0 +1,46 @@
+{% include "navbar.html" %}
+{% load static %}
+
+
+<!-- 
+
+  
+  {% for specials in special %}
+  <img src="{{ specials.img.url }}" class="card-img-top" alt=" no img"> <br>           
+ {{ specials.title}} <br>
+   Rs.{{ specials.price}} <br>
+  
+    {{ specials.details}} <br>
+     
+  {% endfor %}
+   
+     <br><br><br>
+  <p>Available Tables:</p>
+    <br><br>
+    {% for tables in table %}
+    <img src="{{ tables.img.url }}" class="card-img-top" alt=" no img"> <br>           
+    Table Number:{{ tables.table}} <br>
+     Title:{{ tables.title}} <br>
+      Details: {{ tables.details}} <br>
+       
+       
+     
+       <br><br><br>
+    
+    {% endfor %}
+</center>
+-->
+
+
+
+
+<div class="slider-container">
+    <div id="slider">
+        <figure>
+            <img src="{% static 'image/double.jpg' %}" alt="photo xaina">
+            <img src="{% static 'image/table.jpg' %}" alt="photo xaina">
+            <img src="{% static 'image/best-indian-restaurant-philadelphia.jpg' %}" alt="photo xaina">
+            
+        </figure>
+    </div>
+</div>

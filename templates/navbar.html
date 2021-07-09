@@ -1,0 +1,56 @@
+{% load static %}
+ 
+
+
+   <html lang="en">
+   <head>
+  
+   <script src="https://kit.fontawesome.com/f2577888b8.js" crossorigin="anonymous"></script>
+   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/layout1.css' %}">
+   <script src="{% static 'js/read.js' %}"></script>
+   <script src="{% static 'js/recipe.js' %}"></script>
+   <link rel="stylesheet" href="{% static 'css/card-layout.css' %}">
+   <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+   <link rel="stylesheet" href="{% static 'css/img-slider.css' %}">
+   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+   <link rel="stylesheet" href="{% static 'css/recipe.css' %}">
+   <link rel="stylesheet" href="{% static 'css/login.css' %}">
+   <link rel="stylesheet" href="{% static 'css/recipepost.css' %}">
+   
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+   <link rel="stylesheet" href="{% static 'css/register.css' %}">
+   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+   
+   </head>
+   <body>
+
+    {% load static %}
+    <header>
+         <a  class="logo">Rainbow Restaurant</a>
+                {% if user.is_authenticated %}
+                <nav>
+                 <ul class="nav__links">
+                <li><a href="/book" class="lol">Book</a></li>
+                <li><a href="/admin" class="lol">Hello,{{user.username}}</a></li>
+                     
+                <li><a href="/account/logout" class="lol">Logout</a></li>
+               
+                 {% else %}
+                <nav>
+                 <ul class="nav__links">
+                     <li><a href="/" class="lol">Home</a></li>
+                     <li><a href="/menu" class="lol">Menu</a></li>
+    
+    
+                 </ul>
+                </nav>
+        <div class="auth">
+                <a class="cta" href="/account/login" style="padding-right:10px"><button>Login</button></a>
+                <a class="cta" href="/account/register"><button>Register</button></a>
+         </div>
+                {% endif %}
+    
+    </header>

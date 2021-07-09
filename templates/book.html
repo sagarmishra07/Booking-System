@@ -1,0 +1,115 @@
+{% include "navbar.html" %}
+
+
+{% block content %}
+
+<center>
+<br><br><br><br>  
+    {% for message in messages %}
+      
+      
+    
+          <h4  class="w3-wide w3-center">
+            <p style="color:red">
+                 {{message}}</p>
+              {% endfor %}
+            </h4>
+          <h1><em><center>Fill form to Book Tables</center>  </em></h1>
+          <form action="book" method="POST">
+            {% csrf_token %}
+           
+            Table ID:
+            <select name="table" id="table">
+              <option value="1001">1001</option>
+              <option value="1002">1002</option>
+              <option value="1003">1003</option>
+       
+            
+            </select><br>
+           
+              Persons:
+                <select name="number" id="number">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                
+                </select><br>
+                occasion: 
+                <select name="occasion" id="occasion">
+                  <option value="birthday">birthday</option>
+                  <option value="aniversary">aniversary</option>
+                 
+                 
+                </select><br>
+                Phone<input type="text" placeholder="Phone    *" name="phone" ><br>
+                Date<input type="date" placeholder="Date    *" name="date" ><br>
+                 
+            Time:
+            <select name="time" id="time">
+              <option value="10-11 am">10-11 am</option>
+              <option value="12-1 pm">12-01 pm</option>
+              <option value="2-3 pm">2-3 pm</option>
+              <option value="4-5 pm">4-5 pm</option>
+              <option value="6-7 pm">6-7 pm</option>
+              <option value="7-8 pm">7-8 pm</option>
+            
+            
+            
+            </select><br>
+           
+             
+             
+ 
+           
+            
+           
+            
+          
+            
+          <input type="submit" value="Book">
+           
+          </form>
+      
+    
+        <br><br><br>
+        <p> Today's Booking :</p>
+        <br><br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Tables</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              
+            </tr>
+          </thead>
+          {% for book in books %}
+          <tbody>
+            <tr>
+              
+              <td> {{ book.table}}</td>
+              <td>{{ book.date}} </td>
+              <td>{{ book.time}}</td>
+            </tr>
+            
+         
+            
+          </tbody>
+          {% endfor %}
+        </table>
+     
+         
+         
+       
+        
+        
+        
+        
+        
+</center>
+
+
+{% endblock %}        

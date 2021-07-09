@@ -1,0 +1,27 @@
+
+        
+ {% load static %} 
+ {% block content %}   
+
+
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<div class="new-wrapper">
+    <div class="signup-form">
+      <form class="" action="register" method="post">
+          {% csrf_token %}
+        <h1>Sign Up</h1>
+        <input type="text" name="first_name" placeholder="First Name" class="txtb">
+        <input type="text" name="last_name" placeholder="Last Name" class="txtb">
+        <input type="text" name="username" placeholder="Username" class="txtb">
+        <input type="email" name ="email" placeholder="Email" class="txtb">
+        <input type="password" placeholder="Password" class="txtb" name="password">
+     
+        <input type="submit" value="Create Account" class="signup-btn">
+        Already Have one ? <a href="login">Login</a>
+      </form>
+    </div>
+  </body>
+<v-container>
+
+{% endblock %}
+</div>

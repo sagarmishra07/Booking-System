@@ -1,0 +1,28 @@
+{% include 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="title">
+        <h4><span>fresh food for good health</span>our menu</h4>
+    </div>
+    
+    <div class="menu">
+        {% for menus in menu %}
+        <div class="single-menu">
+          
+            <img src="{{ menus.img.url }}" alt="">
+            <div class="menu-content">
+                <h4>{{ menus.details}}  <span>Rs.{{ menus.price}}</span></h4>
+                <p>{{ menus.title}}</p>
+               
+            </div>
+        
+        </div>
+       
+        {% endfor %}<br>
+        
+    </div>
+    
+</div>
+{% endblock %}
